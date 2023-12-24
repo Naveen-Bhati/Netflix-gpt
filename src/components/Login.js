@@ -134,9 +134,7 @@ const Login = () => {
 					onClick={clickSubmitHandler}>
 					{isSignIn ? "Sign In" : "Sign Up"}
 				</button>
-				<p
-					className="font-bold text-md py-4 cursor-pointer"
-					onClick={toggleSignInForm}>
+				<p className="font-bold text-md py-4" onClick={toggleSignInForm}>
 					{isSignIn
 						? "New to Netflix? Sign Up now"
 						: "Already registered? Sign in now"}
