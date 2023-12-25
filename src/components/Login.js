@@ -4,18 +4,22 @@ import {
 	signInWithEmailAndPassword,
 	updateProfile,
 } from "firebase/auth";
-
-import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
+
 import Header from "./Header";
 import { checkDataValidation } from "../utils/validate";
 import { auth } from "../firebase";
 import { addUser } from "../utils/userSlice";
+import {
+	TEXT_SIGN_IN,
+	TEXT_SIGN_IN_NOW,
+	TEXT_SIGN_UP,
+	TEXT_SIGN_UP_NOW,
+} from "../utils/constants";
 
 const Login = () => {
 	const [isSignIn, setIsSignIn] = useState(true);
 	const [errorMsg, setErrorMsg] = useState(null);
-	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
 	const emailRef = useRef(null);
@@ -50,7 +54,6 @@ const Login = () => {
 					const errorMessage = error.message;
 					setErrorMsg(errorCode + "-" + errorMessage);
 				});
-			navigate("/browse");
 		}
 
 		//sign up logic
@@ -78,12 +81,8 @@ const Login = () => {
 									photoURL: photoURL,
 								})
 							);
-
-							navigate("/browse");
 						})
 						.catch((error) => {
-							// An error occurred
-							// ...
 							console.log("error", error.message);
 							setErrorMsg(error.message);
 						});
@@ -97,13 +96,13 @@ const Login = () => {
 	};
 
 	return (
-		<div className="netflix-bg-img h-[968px]">
+		<div className="netflix-bg-img h-screen">
 			<Header />
 			<form
 				onSubmit={(e) => e.preventDefault()}
 				className="w-3/12 flex flex-col bg-black bg-opacity-70 mt-36 m-auto text-white p-12">
 				<h1 className="font-bold text-3xl py-4">
-					{isSignIn ? "Sign In" : "Sign Up"}
+					{isSignIn ? TEXT_SIGN_IN : TEXT_SIGN_UP}
 				</h1>
 				{!isSignIn && (
 					<input
@@ -132,14 +131,12 @@ const Login = () => {
 				<button
 					className="p-4 my-4 w-full rounded-md bg-red-700 cursor-pointer"
 					onClick={clickSubmitHandler}>
-					{isSignIn ? "Sign In" : "Sign Up"}
+					{isSignIn ? TEXT_SIGN_IN : TEXT_SIGN_UP}
 				</button>
 				<p
 					className="font-bold text-md py-4 cursor-pointer"
 					onClick={toggleSignInForm}>
-					{isSignIn
-						? "New to Netflix? Sign Up now"
-						: "Already registered? Sign in now"}
+					{isSignIn ? TEXT_SIGN_UP_NOW : TEXT_SIGN_IN_NOW}
 				</p>
 			</form>
 		</div>
