@@ -13,6 +13,18 @@
     - Create sign up user account
     - Implement Sign in functionality
     - Created userSlice with Redux store
+    - BugFix : User profile updated
+    - BugFix : Navigating from /browse to / if not logged in and vice-versa
+    - Optimize : removed eventListener with cleanup func. for onAuthStateChanged in the  useEffect
+    - Optimize : Added hardcoded values to constants file
+    - Registered on TMDB and got the API key and read access token
+    - got the data from TMDB api nowPlayingMovies
+    - Created custom hook useNowPlayingMovies
+    - created moviesSlice
+    - updated redux store with movies data
+    - Created plan for MainContainer and SecondaryContainer
+    - Fetched the Trailer video from API data
+    - Embedded the youtube video and made it autoPlay with mute option
 
 # Features
 
