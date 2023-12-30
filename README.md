@@ -25,6 +25,11 @@
     - Created plan for MainContainer and SecondaryContainer
     - Fetched the Trailer video from API data
     - Embedded the youtube video and made it autoPlay with mute option
+    - Build SecondaryComponent
+    - Build MovieList
+    - Build MovieCard
+    - TMDB image cdn url
+    - usePopularMovies custom hook created
 
 # Features
 

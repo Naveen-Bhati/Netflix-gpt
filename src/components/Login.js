@@ -44,16 +44,11 @@ const Login = () => {
 				auth,
 				emailRef.current.value,
 				passwordRef.current.value
-			)
-				.then((userCredential) => {
-					const user = userCredential.user;
-					console.log(user);
-				})
-				.catch((error) => {
-					const errorCode = error.code;
-					const errorMessage = error.message;
-					setErrorMsg(errorCode + "-" + errorMessage);
-				});
+			).catch((error) => {
+				const errorCode = error.code;
+				const errorMessage = error.message;
+				setErrorMsg(errorCode + "-" + errorMessage);
+			});
 		}
 
 		//sign up logic
