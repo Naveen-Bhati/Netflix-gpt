@@ -5,3 +5,23 @@
 .netflix-bg-img {
 	background-image: url("https://assets.nflxext.com/ffe/siteui/vlv3/563192ea-ac0e-4906-a865-ba9899ffafad/6b2842d1-2339-4f08-84f6-148e9fcbe01b/IN-en-20231218-popsignuptwoweeks-perspective_alpha_website_large.jpg");
 }
+
+/* For WebKit (Chrome, Safari) */
+.custom-scrollbar::-webkit-scrollbar {
+	width: 0; /* Remove scrollbar */
+}
+
+/* For WebKit (Chrome, Safari) - Track */
+.custom-scrollbar::-webkit-scrollbar-track {
+	background: transparent; /* Set the track color to transparent */
+}
+
+/* For Firefox */
+.custom-scrollbar {
+	scrollbar-width: thin; /* "thin" or "none" can be used */
+}
+
+/* For Firefox - Track */
+.custom-scrollbar::-moz-scrollbar-track {
+	background: transparent; /* Set the track color to transparent */
+}

@@ -1,8 +1,8 @@
-import React from "react";
+import { TEXT_MORE_INFO, TEXT_PLAY } from "../utils/constants";
 
 const TitleContainer = ({ title, overview }) => {
 	return (
-		<div className="absolute pl-16 pt-80 w-screen h-screen text-white bg-gradient-to-r from-black">
+		<div className="absolute pl-16 pt-48 w-screen h-screen text-white bg-gradient-to-r from-black">
 			<h1 className="text-6xl font-bold w-1/2">{title}</h1>
 			<p className="w-1/4 pt-4">{overview}</p>
 			<div className="flex pt-4">
@@ -17,7 +17,7 @@ const TitleContainer = ({ title, overview }) => {
 							fill="#000"
 							d="M7 17.259V6.741a1 1 0 0 1 1.504-.864l9.015 5.26a1 1 0 0 1 0 1.727l-9.015 5.259A1 1 0 0 1 7 17.259Z"></path>
 					</svg>
-					<p>Play</p>
+					<p>{TEXT_PLAY}</p>
 				</button>
 				<button className="ml-4 p-4 px-10 bg-gray-500 text-white text-xl rounded-md flex items-center">
 					<svg
@@ -30,7 +30,7 @@ const TitleContainer = ({ title, overview }) => {
 							<path d="M8 6.85a.5.5 0 0 0-.5.5v3.4a.5.5 0 0 0 1 0v-3.4a.5.5 0 0 0-.5-.5zM8 4.8a.53.53 0 0 0-.51.52v.08a.47.47 0 0 0 .51.47.52.52 0 0 0 .5-.5v-.12A.45.45 0 0 0 8 4.8z"></path>
 						</g>
 					</svg>
-					<p>More Info</p>
+					<p>{TEXT_MORE_INFO}</p>
 				</button>
 			</div>
 		</div>

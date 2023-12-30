@@ -1,6 +1,10 @@
 import { useSelector } from "react-redux";
 
 import useMovieTrailer from "../hooks/useMovieTrailer";
+import {
+	EXTRA_PARAMS_YOUTUBE_VIDEO,
+	URL_YOUTUBE_EMBEDDED,
+} from "../utils/constants";
 
 const BackgroundVideoContainer = ({ movieId }) => {
 	useMovieTrailer(movieId);
@@ -10,7 +14,9 @@ const BackgroundVideoContainer = ({ movieId }) => {
 		<div className="absolute h-screen ">
 			<iframe
 				className="h-screen w-screen aspect-video "
-				src={`https://www.youtube.com/embed/${movieTrailer?.key}?autoplay=1&controls=0&modestbranding=1&rel=0&mute=1`}
+				src={
+					URL_YOUTUBE_EMBEDDED + movieTrailer?.key + EXTRA_PARAMS_YOUTUBE_VIDEO
+				}
 				title="YouTube video player"
 				allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>
 		</div>
